@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GutXFuel — The Power of Potato Starch</title>
+<title>GutXFuel, The Power of Potato Starch</title>
 <style>
   :root {
     --yellow: #E8A317;
@@ -126,8 +126,6 @@
     position: relative;
     height: 480px;
   }
-  .hero .placeholder { height: 100%; }
-  .hero .placeholder span { opacity: 0.55; font-size: 12px; }
   .hero-overlay {
     position: absolute;
     inset: 0;
@@ -219,7 +217,7 @@
     display: grid;
     grid-template-columns: 1.1fr 1fr;
     gap: 56px;
-    align-items: start;
+    align-items: stretch;
   }
   .values-intro p {
     color: var(--brown-muted);
@@ -258,7 +256,16 @@
   .values-image {
     border-radius: 16px;
     overflow: hidden;
-    height: 460px;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 665px;
+  }
+  .values-image img {
+    width: auto;
+    height: 100%;
+    object-fit: contain;
   }
 
   /* Story / testimonial */
@@ -303,12 +310,21 @@
     display: grid;
     grid-template-columns: 1fr 1.1fr;
     gap: 56px;
-    align-items: center;
+    align-items: stretch;
   }
   .benefits-image {
     border-radius: 16px;
     overflow: hidden;
-    height: 420px;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 465px;
+  }
+  .benefits-image img {
+    width: auto;
+    height: 100%;
+    object-fit: contain;
   }
   .benefits-list h2 { font-size: 30px; margin-bottom: 20px; font-weight: 700; }
   .benefits-list > p { color: var(--brown-muted); margin-bottom: 20px; font-size: 15px; }
@@ -425,11 +441,38 @@
     .hero { height: 420px; }
     .hero-overlay h1 { font-size: 28px; }
     .values-wrap { grid-template-columns: 1fr; }
-    .values-image { height: 260px; order: -1; }
+    .values-image {
+      order: -1;
+      display: block;
+      position: relative;
+      container-type: size;
+      aspect-ratio: 1155 / 300;
+    }
+    .values-image img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: auto;
+      height: 100cqw;
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
     .values-grid { grid-template-columns: 1fr; }
     .story-body { flex-direction: column; }
     .benefits { grid-template-columns: 1fr; }
-    .benefits-image { height: 260px; }
+    .benefits-image {
+      display: block;
+      position: relative;
+      container-type: size;
+      aspect-ratio: 1074 / 283;
+    }
+    .benefits-image img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: auto;
+      height: 100cqw;
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
     .gallery-grid { grid-template-columns: repeat(2, 1fr); }
     .footer-grid { grid-template-columns: 1fr 1fr; }
     .section { padding: 48px 0; }
@@ -460,7 +503,7 @@
 </header>
 
 <section class="hero">
-  <div class="placeholder"><span>Hero Image Placeholder<br>1600 × 900</span></div>
+  <img src="images/1.jpg" alt="GutXFuel potato starch">
   <div class="hero-overlay">
     <h1>Meet Your Gut's New Favorite Fuel</h1>
     <a href="#shop" class="btn">Shop GutXFuel →</a>
@@ -481,7 +524,7 @@
         <div class="section-head" style="margin-bottom:16px;">
           <h2>Why Potato Starch?</h2>
         </div>
-        <p>One humble root, a whole lot of benefits. Raw potato starch is one of the richest natural sources of resistant starch — a prebiotic fiber your gut bacteria love. Here's what a daily scoop of GutXFuel can do for you.</p>
+        <p>One humble root, a whole lot of benefits. Raw potato starch is one of the richest natural sources of resistant starch, a prebiotic fiber your gut bacteria love. Here's what a daily scoop of GutXFuel can do for you.</p>
         <div class="values-grid">
           <div class="value-item">
             <div class="value-icon">🌱</div>
@@ -506,16 +549,16 @@
           <div class="value-item">
             <div class="value-icon">🌾</div>
             <h4>100% Whole Food</h4>
-            <p>Just one ingredient — raw potato starch. No fillers, no additives, no nonsense.</p>
+            <p>Just one ingredient, raw potato starch. No fillers, no additives, no nonsense.</p>
           </div>
           <div class="value-item">
             <div class="value-icon">☕</div>
             <h4>Effortless to Add</h4>
-            <p>Stir it into water, smoothies, or coffee — no taste, no texture, no excuses.</p>
+            <p>Stir it into water, smoothies, or coffee, no taste, no texture, no excuses.</p>
           </div>
         </div>
       </div>
-      <div class="values-image placeholder"><span>Lifestyle Image Placeholder<br>800 × 1000</span></div>
+      <div class="values-image"><img src="images/2.jpg" alt="Why potato starch"></div>
     </div>
   </div>
 </section>
@@ -525,13 +568,13 @@
     <h2>Fueled by Real Results</h2>
     <div class="story-body">
       <div style="flex:1;">
-        <p>GutXFuel started with a simple question: why does something as basic as potato starch have such a devoted following in gut health circles, yet stays so hard to find in everyday life? We set out to change that — sourcing clean, non-GMO potato starch and making it as easy to grab as your morning coffee. Today, thousands of people stir a scoop of GutXFuel into their routine every morning, no blender or fuss required.</p>
+        <p>GutXFuel started with a simple question: why does something as basic as potato starch have such a devoted following in gut health circles, yet stays so hard to find in everyday life? We set out to change that, sourcing clean, non-GMO potato starch and making it as easy to grab as your morning coffee. Today, thousands of people stir a scoop of GutXFuel into their routine every morning, no blender or fuss required.</p>
         <div class="quote-card">
           <div class="quote-avatar placeholder"><span style="font-size:10px;">Photo</span></div>
           <div>
             <div class="name">Reid Burgess</div>
             <div class="role">Registered Dietitian</div>
-            <div class="quote">"Adding resistant starch to my clients' diets is one of the simplest changes I recommend — GutXFuel makes it effortless."</div>
+            <div class="quote">"Adding resistant starch to my clients' diets is one of the simplest changes I recommend, GutXFuel makes it effortless."</div>
           </div>
         </div>
       </div>
@@ -542,14 +585,14 @@
 <section class="section" id="benefits">
   <div class="container">
     <div class="benefits">
-      <div class="benefits-image placeholder"><span>Product Image Placeholder<br>900 × 900</span></div>
+      <div class="benefits-image"><img src="images/3.jpg" alt="Benefits you can feel"></div>
       <div class="benefits-list">
         <h2>Benefits You Can Feel</h2>
         <p>A daily scoop of GutXFuel is a small habit with a big ripple effect across your gut, energy, and overall wellbeing.</p>
         <ul>
           <li><div class="check">✓</div>Highly bioavailable prebiotic fiber that reaches your colon intact</li>
           <li><div class="check">✓</div>Supports a diverse, thriving gut microbiome</li>
-          <li><div class="check">✓</div>Odorless and tasteless — mixes into anything, hot or cold</li>
+          <li><div class="check">✓</div>Odorless and tasteless, mixes into anything, hot or cold</li>
           <li><div class="check">✓</div>Non-GMO, gluten-free, and free from artificial additives</li>
           <li><div class="check">✓</div>Helps promote regularity and digestive comfort</li>
           <li><div class="check">✓</div>Sourced from real potatoes, nothing else</li>
