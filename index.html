@@ -297,12 +297,10 @@
   /* Responsive */
   @media (max-width: 760px) {
     .header-inner {
-      flex-wrap: wrap;
       height: auto;
-      gap: 8px;
-      padding: 14px 0;
+      padding: 14px 24px;
     }
-    .wordmark { font-size: 16px; }
+    .wordmark { font-size: 16px; gap: 5px; }
     .hero { padding: 32px 24px 40px; }
     .who { grid-template-columns: 1fr; gap: 32px; }
     .who-photo { order: -1; max-width: 320px; margin: 0 auto; width: 100%; }
@@ -311,7 +309,7 @@
     .signup-card { padding: 36px 24px; }
     .signup-form { flex-direction: column; }
     .signup-form input { width: 100%; }
-    .header-cta { font-size: 12px; padding: 9px 16px; }
+    .header-cta { font-size: 12px; padding: 9px 9px; }
   }
 </style>
 </head>
@@ -341,18 +339,6 @@
   </div>
 </section>
 
-<section class="section" id="who">
-  <div class="container who">
-    <div class="who-copy">
-      <span class="eyebrow">Who We Are</span>
-      <h2>One Root. A World of Gut Benefits.</h2>
-      <p>We're a small team obsessed with one humble ingredient: potato starch. It's one of nature's richest sources of resistant starch, a prebiotic fiber that feeds the good bacteria already working in your gut.</p>
-      <p>No flavor. No grit. No nonsense. Just one clean scoop a day, sourced from real potatoes and nothing else.</p>
-    </div>
-    <div class="who-photo"><img src="images/potatoes-mark.png" alt="GutXFuel potato starch ingredient"></div>
-  </div>
-</section>
-
 <section class="ticker" id="benefits">
   <div class="ticker-track">
     <span class="ticker-item"><span class="emoji">🌱</span>Prebiotic Fiber</span>
@@ -371,6 +357,18 @@
     <span class="ticker-star">★</span>
     <span class="ticker-item"><span class="emoji">🥔</span>100% Real Potatoes</span>
     <span class="ticker-star">★</span>
+  </div>
+</section>
+
+<section class="section" id="who">
+  <div class="container who">
+    <div class="who-copy">
+      <span class="eyebrow">Who We Are</span>
+      <h2>One Root. A World of Gut Benefits.</h2>
+      <p>We're a small team obsessed with one humble ingredient: potato starch. It's one of nature's richest sources of resistant starch, a prebiotic fiber that feeds the good bacteria already working in your gut.</p>
+      <p>No flavor. No grit. No nonsense. Just one clean scoop a day, sourced from real potatoes and nothing else.</p>
+    </div>
+    <div class="who-photo"><img src="images/potatoes-mark.png" alt="GutXFuel potato starch ingredient"></div>
   </div>
 </section>
 
@@ -394,7 +392,7 @@
     <div class="wordmark">
       <span class="gut">GUT</span><span class="x">×</span><span class="fuel">FUEL</span>
     </div>
-    <p>© 2026 GutXFuel. Resistant potato starch for a happier gut.</p>
+    <p>© 2026 GutXFuel. For a happier gut.</p>
   </div>
 </footer>
 
