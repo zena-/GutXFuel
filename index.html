@@ -69,10 +69,10 @@
 
   /* Header */
   header {
-    border-bottom: 1px solid var(--border);
+/*    border-bottom: 1px solid var(--border);*/
     position: sticky;
     top: 0;
-    background: var(--white);
+/*    background: var(--white);*/
     z-index: 100;
   }
   .header-inner {
@@ -93,11 +93,21 @@
   .wordmark .gut { color: var(--red); }
   .wordmark .x { color: var(--charcoal); font-weight: 700; font-size: 15px; }
   .wordmark .fuel { color: var(--gold); }
+  .header-actions { display: flex; align-items: center; gap: 18px; }
   .header-cta { font-size: 13px; padding: 11px 22px; }
+  .icon-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--charcoal);
+    transition: color 0.2s ease;
+  }
+  .icon-link:hover { color: var(--red); }
+  .icon-link svg { width: 22px; height: 22px; }
 
   /* Hero */
   .hero {
-    padding: 72px 0 56px;
+    padding: 40px 0 56px;
     text-align: center;
   }
   .hero-mark {
@@ -304,6 +314,9 @@
   }
   footer .wordmark { justify-content: center; margin-bottom: 8px; font-size: 16px; }
   footer p { font-size: 12.5px; color: var(--gray); }
+  .footer-social { display: flex; justify-content: center; margin-bottom: 14px; }
+  .footer-social .icon-link { color: var(--gray); }
+  .footer-social .icon-link:hover { color: var(--red); }
   .footer-links {
     margin-top: 10px;
     font-size: 12.5px;
@@ -339,7 +352,12 @@
     <a class="wordmark" href="#">
       <span class="gut">GUT</span><span class="x">×</span><span class="fuel">FUEL</span>
     </a>
-    <a href="#signup" class="btn header-cta">Get Early Access</a>
+    <div class="header-actions">
+      <a class="icon-link" href="https://www.instagram.com/gutxfuel/" target="_blank" rel="noopener noreferrer" aria-label="GutXFuel on Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+      </a>
+      <a href="#signup" class="btn header-cta">Get Early Access</a>
+    </div>
   </div>
 </header>
 
@@ -411,6 +429,11 @@
   <div class="container">
     <div class="wordmark">
       <span class="gut">GUT</span><span class="x">×</span><span class="fuel">FUEL</span>
+    </div>
+    <div class="footer-social">
+      <a class="icon-link" href="https://www.instagram.com/gutxfuel/" target="_blank" rel="noopener noreferrer" aria-label="GutXFuel on Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+      </a>
     </div>
     <p>© 2026 GutXFuel. For A Happier Gut.</p>
     <div class="footer-links">
