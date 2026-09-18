@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "gutxfuel-static",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["server.py"],
+      "port": 5552
+    }
+  ]
+}
