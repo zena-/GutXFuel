@@ -296,12 +296,21 @@
 
   /* Responsive */
   @media (max-width: 760px) {
+    .header-inner {
+      flex-wrap: wrap;
+      height: auto;
+      gap: 8px;
+      padding: 14px 0;
+    }
+    .wordmark { font-size: 16px; }
+    .hero { padding: 32px 24px 40px; }
     .who { grid-template-columns: 1fr; gap: 32px; }
     .who-photo { order: -1; max-width: 320px; margin: 0 auto; width: 100%; }
     .ticker-item { font-size: 15px; padding: 0 18px; }
     .section { padding: 48px 0; }
     .signup-card { padding: 36px 24px; }
     .signup-form { flex-direction: column; }
+    .signup-form input { width: 100%; }
     .header-cta { font-size: 12px; padding: 9px 16px; }
   }
 </style>
@@ -352,11 +361,15 @@
     <span class="ticker-star">★</span>
     <span class="ticker-item"><span class="emoji">☕</span>Mixes Into Anything</span>
     <span class="ticker-star">★</span>
+    <span class="ticker-item"><span class="emoji">🥔</span>100% Real Potatoes</span>
+    <span class="ticker-star">★</span>
     <span class="ticker-item"><span class="emoji">🌱</span>Prebiotic Fiber</span>
     <span class="ticker-star">★</span>
     <span class="ticker-item"><span class="emoji">⚡</span>Steadies Your Energy</span>
     <span class="ticker-star">★</span>
     <span class="ticker-item"><span class="emoji">☕</span>Mixes Into Anything</span>
+    <span class="ticker-star">★</span>
+    <span class="ticker-item"><span class="emoji">🥔</span>100% Real Potatoes</span>
     <span class="ticker-star">★</span>
   </div>
 </section>
