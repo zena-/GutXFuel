@@ -386,8 +386,9 @@
       <span class="badge-static">Launching Soon</span>
       <h2>Be the first to know</h2>
       <p>GutXFuel is launching soon. Drop your email and we'll let you know the moment it's live, plus early-bird pricing for the first batch.</p>
-      <form class="signup-form" id="signup-form">
-        <input type="email" id="signup-email" placeholder="you@email.com" required>
+      <form class="signup-form" id="signup-form" name="subscribe" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="subscribe">
+        <input type="email" id="signup-email" name="email" placeholder="you@email.com" required>
         <button type="submit" class="btn" id="signup-btn">Notify Me</button>
       </form>
       <div class="signup-msg" id="signup-msg"></div>
@@ -421,27 +422,28 @@
     msg.textContent = '';
     msg.className = 'signup-msg';
 
+    if (!emailInput.checkValidity()) {
+      msg.textContent = 'Please enter a valid email address.';
+      msg.classList.add('err');
+      return;
+    }
+
     btn.disabled = true;
     btn.textContent = 'Submitting...';
 
     try {
-      const res = await fetch('/api/subscribe', {
+      const res = await fetch('/', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({ 'form-name': 'subscribe', email }).toString(),
       });
-      const data = await res.json();
 
-      if (res.ok && data.ok) {
-        msg.textContent = data.already_subscribed
-          ? "You're already on the list!"
-          : "You're in! We'll be in touch.";
+      if (res.ok) {
+        msg.textContent = "You're in! We'll be in touch.";
         msg.classList.add('ok');
         emailInput.value = '';
       } else {
-        msg.textContent = data.error === 'invalid email'
-          ? 'Please enter a valid email address.'
-          : 'Something went wrong. Please try again.';
+        msg.textContent = 'Something went wrong. Please try again.';
         msg.classList.add('err');
       }
     } catch (err) {

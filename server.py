@@ -4,6 +4,7 @@ import os
 import re
 from datetime import datetime, timezone
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
+from urllib.parse import parse_qs
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SUBSCRIBERS_PATH = os.path.join(ROOT, "subscribers.json")
@@ -23,17 +24,24 @@ class Handler(SimpleHTTPRequestHandler):
         self.wfile.write(body)
 
     def do_POST(self):
-        if self.path != "/api/subscribe":
+        # Mirrors the Netlify Forms endpoint used in production (POST "/"
+        # with an url-encoded body) so the signup form works in local dev too.
+        if self.path not in ("/", "/api/subscribe"):
             self._send_json(404, {"ok": False, "error": "not found"})
             return
 
         length = int(self.headers.get("Content-Length", 0) or 0)
         raw = self.rfile.read(length) if length else b""
-        try:
-            data = json.loads(raw or b"{}")
-        except json.JSONDecodeError:
-            self._send_json(400, {"ok": False, "error": "invalid json"})
-            return
+        content_type = self.headers.get("Content-Type", "")
+
+        if "application/json" in content_type:
+            try:
+                data = json.loads(raw or b"{}")
+            except json.JSONDecodeError:
+                self._send_json(400, {"ok": False, "error": "invalid json"})
+                return
+        else:
+            data = {k: v[0] for k, v in parse_qs(raw.decode("utf-8")).items()}
 
         email = str(data.get("email", "")).strip().lower()
         if not EMAIL_RE.match(email):
