@@ -11,13 +11,13 @@ const emailHtml = `
     <span style="color: #201A16;">×</span>
     <span style="color: #E8A317;">FUEL</span>
   </div>
-  <p style="font-size: 16px; line-height: 1.6;">Thanks for signing up. We'll be in touch shortly with news about our next drop.</p>
+  <p style="font-size: 16px; line-height: 1.6;">Thanks for signing up. We'll be in touch shortly with news about our next drop. In the meantime, follow us at <a href="https://www.instagram.com/gutxfuel/" style="color: #C1440E;">instagram.com/gutxfuel</a>.</p>
   <p style="font-size: 16px; line-height: 1.6;">- GutXFuel</p>
 </div>
 `;
 
 const emailText =
-  "Thanks for signing up. We'll be in touch shortly with news about our next drop.\n\n- GutXFuel";
+  "Thanks for signing up. We'll be in touch shortly with news about our next drop. In the meantime, follow us at instagram.com/gutxfuel.\n\n- GutXFuel";
 
 export default {
   async formSubmitted(event) {
