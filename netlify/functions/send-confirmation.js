@@ -37,14 +37,19 @@ exports.handler = async (event) => {
     return { statusCode: 400, body: "Invalid JSON" };
   }
 
-  // Netlify's outgoing webhook payload nests the submitted fields under
-  // payload.data (falls back to a couple of other shapes just in case).
-  const data = payload.payload?.data || payload.data || payload.payload || payload;
-  const email = data.email;
+  // Netlify's outgoing webhook payload puts submitted fields under `data`
+  // (and mirrors email at the top level); handle a `payload` wrapper too.
+  const email =
+    payload.payload?.data?.email ||
+    payload.data?.email ||
+    payload.email;
 
   if (!email) {
+    console.error("No email in webhook payload. Top-level keys:", Object.keys(payload));
     return { statusCode: 400, body: "Missing email" };
   }
+
+  console.log("Sending confirmation email for form:", payload.form_name || payload.payload?.form_name);
 
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
